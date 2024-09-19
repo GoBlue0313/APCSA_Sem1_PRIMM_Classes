@@ -4,6 +4,7 @@
  * @version 1.0
  * @since 2024-09-
  */
+import java.lang.Math;
 
 class Square {
         /** The side length of the square **/
@@ -13,14 +14,18 @@ class Square {
     private double perimeter = 4.0;
 
         /** The area of the square **/
-        // TODO: add an instance variable for area
+    private double area = 1.0;
     
 
     /**
      * Constructor
      * @param side double representing the side length. Assumes positive non-zero 
      */
-        // TODO: add a constructor that takes a side length
+    public Square(double s) {
+        side = s;
+        perimeter = 4 * side;
+        area = side * side;
+    }
 
 
     /**
@@ -35,13 +40,17 @@ class Square {
      * Gets perimeter
      * @return double representing perimeter
      */
-    // TODO: implement getter for perimeter
+    public double getPerimeter() {
+        return perimeter;
+    }
 
     /**
      * Gets area
      * @return double representing area
      */
-    // TODO: implement getter for area
+    public double getArea() {
+        return area;
+    }
 
     /**
      * Sets side length. Perimeter and area are updated
@@ -50,18 +59,58 @@ class Square {
     public void setSide(double s) {
         side = s;
         perimeter = 4 * side; // calculate perimeter
-        // TODO: calculate the area
+        area = side * side;
     }
 
     /**
      * Sets area. Perimeter and side length are updated
      */
-    // TODO: implement - you will need to import java.lang.Math to use sqrt() method
+    public void setArea (double a) {
+        area = a;
+        side = Math.sqrt(a);
+        perimeter = 4 * side;
+    }
 
 
     /**
      * Sets perimeter. Area and side length are updated
      */
-    // TODO: implement - you will need to import java.lang.Math to use sqrt() method
+    public void setPerimeter(double p) {
+        perimeter = p;
+        side = p / 4;
+        area = side * side;
+    }
 
+    private double radius = 4.0;
+    private double circumference = 4.0 * Math.PI;
+    private double areas = (4.0 * 4.0) * Math.PI;
+        /**
+     * Gets side length
+     * @return double representing side
+     */
+    public double getRadius() {
+        return radius;
+    }
+
+    /**
+     * Gets perimeter
+     * @return double representing perimeter
+     */
+    public double getCircumference() {
+        return circumference;
+    }
+
+    /**
+     * Gets area
+     * @return double representing area
+     */
+    public double getAreas() {
+        return areas;
+    }
+
+    public void setRadius(double r) {
+        radius = r;
+        circumference = (radius * 2) * Math.PI;
+        areas = (radius * radius) * Math.PI;
+    }
 }
