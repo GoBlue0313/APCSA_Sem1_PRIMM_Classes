@@ -10,7 +10,7 @@ class ShapeDriver {
     public static void main(String args[]) {
 
         Square sq1 = new Square(2.0);
-        Square circle1 = new Square(4.0);
+        Circle circle1 = new Circle(4.0);
 
         System.out.printf("Side: %.2f\n", sq1.getSide());
         System.out.printf("Perimeter: %.2f\n", sq1.getPerimeter());
